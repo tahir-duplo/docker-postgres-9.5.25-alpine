@@ -1,9 +1,11 @@
 # docker-postgres-9.5.25-alpine
 Docker Image For postgres-9.5.25-alpine
 
-## Build Docker Image
+## Build Docker Image And Run Docker Container
 
 ```
+docker build . -t postgres:v1
+
 docker run -e PG_USER=tahir -e POSTGRES_PASSWORD=rayan@21521 -e PG_DB=duplo -p 5432:5432 postgres:v1
 ```
 
@@ -11,6 +13,10 @@ docker run -e PG_USER=tahir -e POSTGRES_PASSWORD=rayan@21521 -e PG_DB=duplo -p 5
 
 ```
 docker volume create test-data
+
 docker volume inspect test-data
+
+docker build . -t postgres:v1
+
 docker run -e PG_USER=tahir -e POSTGRES_PASSWORD=rayan@21521 -e PG_DB=duplo -v test-data:/var/data -p 5432:5432 postgres:v1
 ```
